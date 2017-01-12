@@ -2,11 +2,9 @@ import { Router, Route, hashHistory } from 'react-router'
 import App from './App'
 
 function lazyLoad (moduleName) {
-  return function (location, cb) {
-    import(`./components/${moduleName}`)
-      .then(module => cb(null, module.default))
-      .catch(err => console.error(err))
-  }
+  return (location, cb) => import(`./components/${moduleName}`)
+    .then(module => cb(null, module.default))
+    .catch(err => console.error(err))
 }
 
 export default function Root () {

@@ -20,7 +20,6 @@ module.exports = merge(webpackConfBase, {
       output: { comments: false }
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 10000 }),
     new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',

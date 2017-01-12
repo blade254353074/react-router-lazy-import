@@ -1,4 +1,4 @@
-export default class Home extends React.PureComponent {
+export default class About extends React.PureComponent {
   render () {
     return (
       <div>

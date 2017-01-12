@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --no-info --config ./webpack/conf.dev.js --colors --compress --host 0.0.0.0 --port 8080 --inline --hot --open",
-    "build": "webpack --define process.env.NODE_ENV='production' --progress --config ./webpack/conf.prod.js",
+    "prebuild": "rimraf ./build/*",
+    "build": "webpack -p --progress --config ./webpack/conf.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -43,6 +44,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "html-webpack-plugin": "^2.26.0",
     "inline-manifest-webpack-plugin": "^3.0.1",
+    "rimraf": "^2.5.4",
     "standard": "^8.6.0",
     "standard-loader": "^5.0.0",
     "style-loader": "^0.13.1",

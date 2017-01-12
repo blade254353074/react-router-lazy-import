@@ -8,12 +8,13 @@ module.exports = {
     libs: [
       'es6-promise/auto',
       'react',
+      'react-dom',
       'react-router'
     ],
     entry: './src/entry'
   },
   output: {
-    path: `${__dirname}/build`,
+    path: `${process.cwd()}/build`,
     publicPath: '/',
     filename: 'assets/js/[name].js',
     chunkFilename: 'assets/js/chunk.[name].js'

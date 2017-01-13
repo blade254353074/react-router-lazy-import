@@ -1,21 +1,20 @@
 import { Router, Route, hashHistory } from 'react-router'
 import App from './App'
 
-function lazyLoad (moduleName) {
-  return (location, cb) => import(`./components/${moduleName}`)
-    .then(module => cb(null, module.default))
+const lazyload = moduleName => _ =>
+  import(`./components/${moduleName}`)
+    .then(module => module.default)
     .catch(err => console.error(err))
-}
 
 export default function Root () {
   return (
     <Router history={hashHistory}>
       <Route path='/' component={App}>
-        <Route path='/home' getComponent={lazyLoad('Home')} />
-        <Route path='/posts' getComponent={lazyLoad('Posts')}>
-          <Route path=':id' getComponent={lazyLoad('Article')} />
+        <Route path='/home' getComponent={lazyload('Home')} />
+        <Route path='/posts' getComponent={lazyload('Posts')}>
+          <Route path=':id' getComponent={lazyload('Article')} />
         </Route>
-        <Route path='/about' getComponent={lazyLoad('About')} />
+        <Route path='/about' getComponent={lazyload('About')} />
       </Route>
     </Router>
   )

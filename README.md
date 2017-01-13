@@ -1,7 +1,7 @@
 # React-router component lazyload with `import()`
 
-This is a react-router component lazyload example with TC39 Stage-3 syntax `import()`
-Please checkout the file `./src/Router.js`
+This is a react-router component lazyload example with TC39 Stage-3 syntax `import()`  
+Checkout the file `./src/Router.js`
 
 ## How to start
 

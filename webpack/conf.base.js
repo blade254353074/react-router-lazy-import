@@ -26,7 +26,7 @@ module.exports = {
       'node_modules'
     ],
     alias: {
-      'babel-runtime/core-js/promise': 'es6-promise',
+      'babel-runtime/core-js/promise': 'es6-promise'
     }
   },
   module: {

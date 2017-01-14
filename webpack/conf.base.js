@@ -37,20 +37,17 @@ module.exports = {
       exclude
     }, {
       test: /\.jsx?$/i,
-      loader: 'babel-loader',
       exclude,
+      loader: 'babel-loader',
       options: { cacheDirectory: true }
     }, {
       test: /\.css$/i,
-      use: [
-        { loader: 'style-loader' },
-        { loader: 'css-loader' }
-      ]
+      use: ['style-loader', 'css-loader']
     }, {
-      test: /\.html$/,
+      test: /\.html$/i,
       loader: 'html-loader'
     }, {
-      test: /\.ejs$/,
+      test: /\.ejs$/i,
       loader: 'ejs-loader'
     }]
   },
